@@ -1,5 +1,3 @@
-"use strict";
-
 // Elements
 const board = document.querySelector(".board");
 
@@ -15,6 +13,9 @@ function boardSize(size) {
     let square = document.createElement("div");
     square.style.backgroundColor = "white";
     board.appendChild(square);
+    square.addEventListener("mouseover", function () {
+      square.style.backgroundColor = "black";
+    });
   }
 }
 
