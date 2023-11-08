@@ -2,6 +2,7 @@
 const board = document.querySelector(".board");
 const btnBoardSize = document.querySelector(".btn-board-size");
 const btnRandomColor = document.querySelector(".btn-random-color");
+const btnReset = document.querySelector(".reset");
 let color = "black";
 
 // Random Color
@@ -56,3 +57,8 @@ function squareColor() {
 function changeColor(choice) {
   color = choice;
 }
+
+btnReset.addEventListener("click", function () {
+  boardSize(16);
+  changeColor("black");
+});
