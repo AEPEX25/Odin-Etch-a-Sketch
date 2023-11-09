@@ -3,7 +3,19 @@ const board = document.querySelector(".board");
 const btnBoardSize = document.querySelector(".btn-board-size");
 const btnRandomColor = document.querySelector(".btn-random-color");
 const btnReset = document.querySelector(".reset");
+let checkText = document.getElementById("check");
 let color = "black";
+let click = false;
+
+//Color Picker
+let colorPicker = new iro.ColorPicker("#picker", {
+  width: 150,
+  color: "#f00",
+});
+
+colorPicker.on("color:change", function (pColor) {
+  color = pColor.hexString;
+});
 
 // Random Color
 
@@ -17,7 +29,7 @@ let randomColor = function () {
   return rgb;
 };
 
-// Board Size
+// Default Board Size
 
 function boardSize(size) {
   let squares = board.querySelectorAll("div");
@@ -37,6 +49,8 @@ function boardSize(size) {
 
 boardSize(16);
 
+// Board Size btn
+
 btnBoardSize.addEventListener("click", function () {
   let size = prompt("What board size do you want?");
   if (size < 2 || size > 100) {
@@ -46,11 +60,15 @@ btnBoardSize.addEventListener("click", function () {
   }
 });
 
+//
+
 function squareColor() {
-  if (color == "random") {
-    this.style.backgroundColor = randomColor();
-  } else {
-    this.style.backgroundColor = color;
+  if (click) {
+    if (color == "random") {
+      this.style.backgroundColor = randomColor();
+    } else {
+      this.style.backgroundColor = color;
+    }
   }
 }
 
@@ -58,7 +76,19 @@ function changeColor(choice) {
   color = choice;
 }
 
+// Reset btn
+
 btnReset.addEventListener("click", function () {
   boardSize(16);
   changeColor("black");
+  click = true;
+});
+
+board.addEventListener("click", () => {
+  click = !click;
+  if (click) {
+    checkText.textContent = "You can draw!!";
+  } else {
+    checkText.textContent = "You can`t draw!!";
+  }
 });
