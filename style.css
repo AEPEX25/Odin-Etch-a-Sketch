@@ -65,6 +65,11 @@ h6 {
 General Styles 
 */
 
+html {
+  background-color: rgb(212, 212, 212);
+  font-family: "Ubuntu", sans-serif;
+}
+
 body {
   display: flex;
   align-items: center;
@@ -78,17 +83,33 @@ body {
   display: flex;
 }
 
+h1 {
+  font-family: "Pixelify Sans", sans-serif;
+  font-size: 50px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
 /*
 Styles
 */
 
 .sketch {
-  gap: 10px;
+  gap: 30px;
 }
 
 .scketch-options {
-  background-color: white;
+  justify-content: center;
   flex-direction: column;
+  gap: 10px;
+}
+
+.scketch-board {
+  flex-direction: column;
+  align-items: center;
   gap: 10px;
 }
 
@@ -96,5 +117,7 @@ Styles
   width: 500px;
   height: 500px;
   display: grid;
-  border: 1px solid rgb(0, 0, 0);
+  border: 5px solid rgba(0, 0, 0, 0.575);
+  box-shadow: 13px 13px 20px -3px rgba(0, 0, 0, 0.377);
+  margin-bottom: 15px;
 }

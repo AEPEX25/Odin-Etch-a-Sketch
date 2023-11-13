@@ -4,13 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!------Google Fonts------->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap"
+      rel="stylesheet"
+    />
     <script defer src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
     <title>Etch-a-Sketch</title>
   </head>
   <body>
-    <h1>Odin Sketch</h1>
-    <p id="check"></p>
     <div class="sketch flex">
       <div class="scketch-options flex">
         <div id="picker"></div>
@@ -21,7 +28,15 @@
         <button onclick="changeColor('white')">Eraser</button>
         <button class="reset">Reset</button>
       </div>
-      <div class="board"></div>
+      <div class="scketch-board flex">
+        <h1>Odin Sketch</h1>
+        <p id="check">Click on the board to draw</p>
+        <div class="board"></div>
+        <a href="https://github.com/AEPEX25/odin-etch-a-sketch" target="_blank"
+          >Copyright © 2023 angelestevez</a
+        >
+      </div>
     </div>
+    <footer></footer>
   </body>
 </html>

@@ -7,7 +7,7 @@ let checkText = document.getElementById("check");
 let color = "black";
 let click = false;
 
-//Color Picker
+//Color Picker`
 let colorPicker = new iro.ColorPicker("#picker", {
   width: 150,
   color: "#f00",
@@ -80,9 +80,10 @@ function changeColor(choice) {
 
 btnReset.addEventListener("click", function () {
   boardSize(16);
-  changeColor("black");
-  click = true;
+  click = false;
 });
+
+// Click to draw
 
 board.addEventListener("click", () => {
   click = !click;
